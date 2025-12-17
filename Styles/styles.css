@@ -1,0 +1,83 @@
+body{
+    background-color: darkgreen;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: snow;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+#top{
+    color:snow;
+}
+.common{
+    background-color: #636363;
+    border: 3px solid black;
+    position: absolute;
+    padding: 10px;
+}
+.header{
+    top: 5px;
+    left: 5px;
+    right: 137px;
+    height: 95px;
+    text-align: center; 
+}
+.thelinks{
+    top: 5px;
+    right: 7px;
+    width: 100px;
+    text-align: center;
+    height: 95px;
+    z-index: 1;
+    position: fixed;
+}
+.right{
+    top: 128px;
+    right: 7px;
+    width: 100px;
+    text-align: left;
+    bottom: 1px;
+    z-index: 1;
+    position: fixed;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.main{
+    top: 128px;
+    left: 5px;
+    right: 137px;
+    bottom: 25px;
+    height: fit-content;
+    flex: 1; 
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.videocenter { 
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    gap: 20px;
+    margin: 20px 0;
+}
+.smallertableau {
+    width: 600px;     
+    height: 400px;     
+    margin: auto;      
+}
+ol{
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.redtext{
+    color:darkred;
+}

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Caleb Anderson - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #002E5D 0%, #0062B8 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .name {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 22px;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 50px 40px 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            color: #002E5D;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #0062B8, #667eea);
+            border-radius: 2px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #0062B8;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .degree {
+            font-size: 20px;
+            font-weight: bold;
+            color: #002E5D;
+        }
+
+        .school {
+            font-size: 18px;
+            color: #0062B8;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .gpa-badge {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(46, 204, 113, 0.3);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 15px;
+            margin-top: 15px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .scholarship-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-top: 5px;
+            box-shadow: 0 2px 5px rgba(243, 156, 18, 0.3);
+        }
+
+        .experience-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            border-color: #0062B8;
+            box-shadow: 0 5px 15px rgba(0,98,184,0.1);
+            transform: translateY(-2px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #002E5D;
+        }
+
+        .company {
+            font-size: 17px;
+            color: #0062B8;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .job-date {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+            margin-top: 12px;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 4px solid #0062B8;
+            transition: all 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,98,184,0.15);
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: #002E5D;
+            margin-bottom: 12px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: white;
+            color: #0062B8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 2px solid #0062B8;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #0062B8;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .interest-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .interest-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .interest-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .interest-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .btn {
+            padding: 14px 35px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0062B8, #002E5D);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,98,184,0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0062B8;
+            border: 2px solid #0062B8;
+        }
+
+        .btn-secondary:hover {
+            background: #0062B8;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .mission-banner {
+            background: linear-gradient(135deg, #5a6c7d, #4a5c6d);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(90, 108, 125, 0.2);
+        }
+
+        .mission-banner-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .mission-banner-text {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .action-buttons {
+                display: none;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .contact-item {
+                background: rgba(0,46,93,0.1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 25px;
+            }
+            .name {
+                font-size: 36px;
+            }
+            .content {
+                padding: 40px 25px 30px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name"> CALEB ANDERSON</div>
+            <div class="tagline">Cybersecurity Student • Print Shop Leader • Future Missionary</div>
+            <div class="contact-info">
+                <div class="contact-item">📧 Calebba@byu.edu</div>
+                <div class="contact-item">📍 Provo, UT</div>
+                <div class="contact-item">💼 linkedin.com/in/caleb-b-anderson</div>
+                <div class="contact-item">🔗 github.com/Calibus-Daft</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="highlight-box">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">Bachelor of Science in Cybersecurity</div>
+                            <div class="school">Brigham Young University</div>
+                        </div>
+                        <div class="gpa-badge">4.0 GPA</div>
+                    </div>
+                    <div class="info-grid">
+                        <span class="info-label">Status:</span>
+                        <span class="info-value">Freshman • Expected Graduation: 2031</span>
+                        
+                        <span class="info-label">Scholarships:</span>
+                        <span class="info-value">
+                            <span class="scholarship-tag">🏆 BYU Opportunity Scholarship</span>
+                            <span class="scholarship-tag">🏆 BYU Prime Scholarship</span>
+                            <span class="scholarship-tag">🏆 Merit-Based Scholarship</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">High School Diploma</div>
+                            <div class="school">Springville High School</div>
+                        </div>
+                        <div class="gpa-badge">4.0 GPA</div>
+                    </div>
+                    <div class="info-grid">
+                        <span class="info-label">Graduated:</span>
+                        <span class="info-value">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Shift Lead Specialty Assistant</div>
+                            <div class="company">Cougar Creations</div>
+                        </div>
+                        <div class="job-date">June 2025 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Lead daily operations of specialty print shop, managing workflow and ensuring quality standards</li>
+                            <li>Train and supervise team members on equipment operation, graphic formatting, and customer service protocols</li>
+                            <li>Operate professional printing equipment including large-format printers, mounting systems, and precision cutting tools</li>
+                            <li>Format and prepare customer graphics for production, ensuring design specifications meet print requirements</li>
+                            <li>Execute complete print production process from digital file preparation through finishing, mounting, and cutting</li>
+                            <li>Collaborate with customers to understand project requirements and deliver high-quality custom print solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-box">
+                        <div class="skill-category">💻 Programming & Development</div>
+                        <div class="skill-items">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">VBA</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <div class="skill-category">🎨 Design & Media</div>
+                        <div class="skill-items">
+                            <span class="skill-tag">Adobe Photoshop</span>
+                            <span class="skill-tag">Adobe InDesign</span>
+                            <span class="skill-tag">Adobe Premiere</span>
+                            <span class="skill-tag">DaVinci Resolve</span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <div class="skill-category">📊 Data & Analytics</div>
+                        <div class="skill-items">
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Data Visualization</span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <div class="skill-category">🌐 Languages</div>
+                        <div class="skill-items">
+                            <span class="skill-tag">English (Native)</span>
+                            <span class="skill-tag">Chinese (Fluent)</span>
+                            <span class="skill-tag">Japanese (Learning)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Interests & Activities</h2>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">🧗</div>
+                        <div class="interest-name">Rock Climbing</div>
+                        <div style="font-size: 13px; margin-top: 5px; opacity: 0.9;">Since age 12</div>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">⛷️</div>
+                        <div class="interest-name">Skiing</div>
+                        <div style="font-size: 13px; margin-top: 5px; opacity: 0.9;">Mountain Enthusiast</div>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">🏃</div>
+                        <div class="interest-name">Track & Field</div>
+                        <div style="font-size: 13px; margin-top: 5px; opacity: 0.9;">Hurdles Competitor</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-banner">
+                <div class="mission-banner-title">🇯🇵 Upcoming Mission</div>
+                <div class="mission-banner-text">Called to serve in Tokyo, Japan for The Church of Jesus Christ of Latter-day Saints</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="window.print()">📄 Download PDF</button>
+            <button class="btn btn-secondary" onclick="alert('Thanks for visiting!')">✉️ Get in Touch</button>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
